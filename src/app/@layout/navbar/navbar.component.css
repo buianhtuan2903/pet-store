@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
+nav{
+    z-index: 3;
+}
