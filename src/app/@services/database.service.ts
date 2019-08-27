@@ -7,23 +7,24 @@ import { database } from 'firebase';
   providedIn: 'root'
 })
 
-export class ShareService {
+export class DatabaseService {
+  
   private basePath = '/dogname';
-  public items: any;
-  public item: any;
+
   constructor(private db: AngularFireDatabase) { } 
-  addShare(data) {
+
+  addDog(data) {
   const obj = this.db.database.ref(this.basePath);
   // obj.child("dogdata").set(data);
   obj.push(data);
   alert('Success');
   }
   
-  getShares(path): Observable<any[]> {
+  getDog(path): Observable<any[]> {
     return this.db.list(path).valueChanges();
   }
 
-  finddog() {
+  findDog() {
     this.db.database.ref(this.basePath).orderByChild('name').equalTo('con cho').on("value", function(snapshot) {
       console.log(snapshot.val());
       snapshot.forEach(function(data) {

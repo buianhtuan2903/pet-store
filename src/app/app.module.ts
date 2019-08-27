@@ -10,11 +10,13 @@ import { ContentComponent } from './@layout/content/content.component';
 import { PageRoutingModule } from './@layout/content/page-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ShareService } from './@services/share.service';
+import { DatabaseService } from './@services/database.service';
 import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { AdminComponent } from './@pages/admin/admin.component';
+import { CarouselComponent } from './@pages/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AngularFireDatabaseModule} from '@angular/fire/database';
     ContentComponent,
     NavbarComponent,
     FoobarComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { AngularFireDatabaseModule} from '@angular/fire/database';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [ShareService],
+  providers: [
+    DatabaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

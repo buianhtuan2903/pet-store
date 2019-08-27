@@ -5,13 +5,14 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { DogData } from 'src/app/@services/dogdata';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class AdminComponent implements OnInit {
 
   public dogs: Observable<any[]>;
+
   constructor(private shareservice: DatabaseService) { }
   angForm = new FormGroup ({
     name: new FormControl(''),

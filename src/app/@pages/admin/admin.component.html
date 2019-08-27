@@ -1,0 +1,28 @@
+<div class="container" >
+    <form [formGroup]="angForm" novalidate>
+      <div>
+        <label>Pet name</label>
+        <input type="text" name="name" formControlName="name" #name>
+      </div>
+      
+      <div>
+        <label>Super power</label>
+        <input type="text" name="power" formControlName="power" #power>
+      </div>
+      
+      <button (click)="addDog(name.value, power.value)" type="submit">Add</button>
+      </form>
+      
+      <table class="table table-striped">
+        <tr>
+          <th>Dog Name</th>
+          <th>Dog Power</th>
+        </tr>
+        <tr *ngFor="let dog of dogs | async">
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.power }}</td>
+        </tr>
+      </table>
+      
+      <button (click)="findDog()">Find</button>
+  </div>

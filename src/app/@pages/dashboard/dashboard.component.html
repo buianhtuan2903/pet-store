@@ -1,65 +1,43 @@
-  <div class="container" >
-    <form [formGroup]="angForm" novalidate>
-      <div>
-        <label>Pet name</label>
-        <input type="text" name="name" formControlName="name" #name>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">asdsd</div>
+      <div class="col-sm-9">
+        <div id="banner" class="carousel slide" data-ride="carousel">
+
+
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+          
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="/dashboard"><img src="assets/img/husky1.jpg" alt="#" width="800" height="400"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="/dashboard"><img src="assets/img/husky2.jpg" alt="#" width="800" height="400"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="/dashboard"><img src="assets/img/husky3.jpg" alt="#" width="800" height="400"></a>
+            </div>
+          </div>
+          
+ 
+          <a class="carousel-control-prev" href="#banner" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#banner" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
       </div>
-      
-      <div>
-        <label>Super power</label>
-        <input type="text" name="power" formControlName="power" #power>
-      </div>
-      
-      <button (click)="addShare(name.value, power.value)" type="submit">Add</button>
-      </form>
-      
-      <table class="table table-striped">
-        <tr>
-          <th>Dog Name</th>
-          <th>Dog Power</th>
-        </tr>
-        <tr *ngFor="let share of shares | async">
-          <td>{{ share.name }}</td>
-          <td>{{ share.power }}</td>
-        </tr>
-      </table>
-      
-      <button (click)="finddog()">Find</button>
-  </div>
-  <div class="container" >
-    <h3>Collapsible Navbar</h3>
-    <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
-    <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-    <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
+    </div>
+  <div>
   
-  </div>
   <div class="container" >
-    <h3>Collapsible Navbar</h3>
-    <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
-    <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-    <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
-  
-  </div>
-  <div class="container" >
-    <h3>Collapsible Navbar</h3>
-    <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
-    <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-    <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
-  
-  </div>
-  <div class="container" >
-    <h3>Collapsible Navbar</h3>
-    <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
-    <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-    <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
-  
-  </div>
-  <div class="container" >
-    <h3>Collapsible Navbar</h3>
-    <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
-    <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-    <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
-  
+    <app-carousel></app-carousel>
   </div>
   <div class="container" >
     <h3>Collapsible Navbar</h3>
@@ -90,25 +68,13 @@
   
   </div>
    
-  <footer class="fluid-container bg-light">
+  <footer class="fluid-container bg-dark">
       <div class="container" id="footer">
-            <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
-                  <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
-                  <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
-                  <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
-                  <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
-                  <p>
-                    Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
-                  </p>
+        <p>
+          Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
+        </p>
+        <p>
+          Made with by <a href="https://twitter.com/chrisoncode">Chris from Scotch</a>
+        </p>
       </div>   
-  </footer> 
+  </footer>
