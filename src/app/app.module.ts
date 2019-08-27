@@ -8,6 +8,13 @@ import { DashboardComponent } from './@pages/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './@layout/content/content.component';
 import { PageRoutingModule } from './@layout/content/page-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ShareService } from './@services/share.service';
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -20,9 +27,14 @@ import { PageRoutingModule } from './@layout/content/page-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PageRoutingModule
+    PageRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [ShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
