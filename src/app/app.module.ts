@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { AdminComponent } from './@pages/admin/admin.component';
 import { CarouselComponent } from './@pages/carousel/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CarouselComponent } from './@pages/carousel/carousel.component';
     HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule
   ],
   providers: [
     DatabaseService

@@ -24,17 +24,15 @@ export class DatabaseService {
     return this.db.list(path).valueChanges();
   }
 
-  findDog(findvalue) {
-    this.db.database.ref(this.basePath).orderByChild('name').equalTo(findvalue).on("value", function(snapshot) {
+  findDog(data2){
+    this.db.database.ref(this.basePath).orderByChild('name').equalTo(data2).on("value", function(snapshot) {
       console.log(snapshot.val());
       snapshot.forEach(function(data) {
       // alert(data.val().power);
       var cac1 = data.val();
       alert(cac1.price);
       });
-      
     });
-  
   }
 
 }

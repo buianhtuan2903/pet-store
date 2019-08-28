@@ -11,31 +11,12 @@ import { DogData } from 'src/app/@services/dogdata';
 })
 export class DashboardComponent implements OnInit {
 
-  public dogs: Observable<any[]>;
-  constructor(private shareservice: DatabaseService) { }
-  angForm = new FormGroup ({
-    name: new FormControl(''),
-    power: new FormControl('')
-  })
+  
+  constructor() { }
+ 
 
   ngOnInit() {
-    this.dogs = this.getDog('/dogname');
-  }
 
-  addDog(name, power) {
-    const dataObj : DogData = {
-      name: name,
-      power: power
-    };
-    this.shareservice.addDog(dataObj);
-  }
-  
-  getDog(path) {
-    return this.shareservice.getDog(path);
-  }
-
-  findDog(){
-    this.shareservice.findDog();
   }
 
 }

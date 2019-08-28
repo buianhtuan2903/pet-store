@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
 
   public dogs: Observable<any[]>;
 
-  constructor(private shareservice: DatabaseService) { }
+  constructor(private databaseservice: DatabaseService) { }
   angForm = new FormGroup ({
     name: new FormControl(''),
     type: new FormControl(''),
@@ -28,24 +28,21 @@ export class AdminComponent implements OnInit {
     const dataObj : DogData = {
       name: name,
       type: type,
-      price: price,
+      price: price
     };
-    this.shareservice.addDog(dataObj);
+    this.databaseservice.addDog(dataObj);
   }
   
   getDog(path) {
-    return this.shareservice.getDog(path);
+    return this.databaseservice.getDog(path);
   }
 
-  findvalueForm = new FormGroup(  
+  findvalueForm = new FormGroup({
     findvalue: new FormControl('')
-  )
-
+  })
+  // findvalue ='nhut';
   findDog(findvalue){
-    const dataObj2 = {
-      findvalue: findvalue,
-    };
-    this.shareservice.findDog(this.findvalue);
+    this.databaseservice.findDog(findvalue);
   }
 
 }

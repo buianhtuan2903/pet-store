@@ -1,12 +1,25 @@
 *{
     box-sizing: border-box;
+    padding: 0px !important;
 }
 
 nav{
     z-index: 3;
 }
 
-a{
+button > a{
     text-decoration: none;
     color: white;
 }
+
+li > a {
+    margin: 0px 10px;
+}
+
+li > a > img{
+    width: 30px;
+    height: 30px;
+    margin: auto auto;
+    padding: 0px;
+}
+

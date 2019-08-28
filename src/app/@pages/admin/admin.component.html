@@ -29,8 +29,8 @@
 
 
       <form [formGroup]="findvalueForm" novalidate>
-        <input type="text" name="findvalue" formControlName="findvalue">
-        <button (click)="findDog()">Find</button>
+        <input type="text" name="findvalue" formControlName="findvalue" #findvalue>
+        <button (click)="findDog(findvalue.value)" type="submit">Find</button>
       </form>
       
   </div>
