@@ -10,7 +10,7 @@ import { database } from 'firebase';
 export class DatabaseService {
   
   private basePath = '/dogname';
-
+  
   constructor(private db: AngularFireDatabase) { } 
 
   addDog(data) {
@@ -24,13 +24,13 @@ export class DatabaseService {
     return this.db.list(path).valueChanges();
   }
 
-  findDog() {
-    this.db.database.ref(this.basePath).orderByChild('name').equalTo('con cho').on("value", function(snapshot) {
+  findDog(findvalue) {
+    this.db.database.ref(this.basePath).orderByChild('name').equalTo(findvalue).on("value", function(snapshot) {
       console.log(snapshot.val());
       snapshot.forEach(function(data) {
       // alert(data.val().power);
       var cac1 = data.val();
-      alert(cac1.power);
+      alert(cac1.price);
       });
       
     });

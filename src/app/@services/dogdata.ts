@@ -1,4 +1,5 @@
 export class DogData{
     name: string;
-    power: string;
+    type: string;
+    price: number;
 }

@@ -16,17 +16,19 @@ export class AdminComponent implements OnInit {
   constructor(private shareservice: DatabaseService) { }
   angForm = new FormGroup ({
     name: new FormControl(''),
-    power: new FormControl('')
+    type: new FormControl(''),
+    price: new FormControl(''),
   })
 
   ngOnInit() {
     this.dogs = this.getDog('/dogname');
   }
 
-  addDog(name, power) {
+  addDog(name, type, price) {
     const dataObj : DogData = {
       name: name,
-      power: power
+      type: type,
+      price: price,
     };
     this.shareservice.addDog(dataObj);
   }
@@ -35,8 +37,15 @@ export class AdminComponent implements OnInit {
     return this.shareservice.getDog(path);
   }
 
-  findDog(){
-    this.shareservice.findDog();
+  findvalueForm = new FormGroup(  
+    findvalue: new FormControl('')
+  )
+
+  findDog(findvalue){
+    const dataObj2 = {
+      findvalue: findvalue,
+    };
+    this.shareservice.findDog(this.findvalue);
   }
 
 }

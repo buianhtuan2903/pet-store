@@ -1,28 +1,36 @@
 <div class="container" >
-    <form [formGroup]="angForm" novalidate>
-      <div>
-        <label>Pet name</label>
-        <input type="text" name="name" formControlName="name" #name>
-      </div>
-      
-      <div>
-        <label>Super power</label>
-        <input type="text" name="power" formControlName="power" #power>
-      </div>
-      
-      <button (click)="addDog(name.value, power.value)" type="submit">Add</button>
+  <div class="card">
+    <h3 class="card-title">Add product</h3>
+      <form [formGroup]="angForm" novalidate>
+        <input type="text" placeholder="Product name ..." name="name" formControlName="name" #name>
+        <input type="text" placeholder="Product type ..." name="type" formControlName="type" #type>
+        <input type="number" placeholder="Product price ..." name="price" formControlName="price" #price>
+
+        <button (click)="addDog(name.value, type.value, price.value)" type="submit">Add</button>
       </form>
-      
-      <table class="table table-striped">
-        <tr>
-          <th>Dog Name</th>
-          <th>Dog Power</th>
+  </div>
+    <div class="card">
+      <h3 class="card-title">Product management</h3>      
+      <div class="table-responsive">      
+        <table class="table table-hover">
+        <tr class="thead-dark">
+          <th>Name</th>
+          <th>Type</th>
+          <th>Price</th>
         </tr>
         <tr *ngFor="let dog of dogs | async">
           <td>{{ dog.name }}</td>
-          <td>{{ dog.power }}</td>
+          <td>{{ dog.type }}</td>
+          <td>{{ dog.price }}</td>
         </tr>
-      </table>
+        </table>
+      </div>
+    </div>
+
+
+      <form [formGroup]="findvalueForm" novalidate>
+        <input type="text" name="findvalue" formControlName="findvalue">
+        <button (click)="findDog()">Find</button>
+      </form>
       
-      <button (click)="findDog()">Find</button>
   </div>
