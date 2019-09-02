@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 20px 0px;
+}
+
+.card{
+    margin: 10px auto;
+    padding: 20px;
+}
+
+input{
+    height: 32px;
+    margin: auto 10px;
+}
+
+button {
+    width: 100px;
+}

@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: calc(100vh - 460px);
+}
+
+img{
+    border: 1px solid rgb(221, 220, 220);
+    width: 100%;
+}
+
+.row{
+    padding: 20px 0px;
+}
+
+ul.item-list{
+    list-style: none;
+    border-radius: 3px;
+    border: 1px solid rgb(221,221,221);
+    padding: 0px;
+    color: black;
+    margin-bottom: 0px;
+}
+
+ul.item-list > li{
+    height: auto;
+    display: block;
+    height: 100%;
+    align-items: center;
+}
+
+a.item-link{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0px;
+    color: black;
+    display: block;
+}
+
+.panel-body{
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0px;
+}
+
+.item-link:hover, .panel-body:hover{
+    background-color: #4269AF;
+    color: white;
+}
+
+.dropdown-toggle{
+    float: right;
+}
+
+.card{
+    text-decoration: none;
+    color: black;
+    border: none;
+}
+
+#info{
+    padding: 10px;
+}

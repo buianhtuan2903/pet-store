@@ -1,25 +1,47 @@
 *{
     box-sizing: border-box;
-    padding: 0px !important;
 }
 
 nav{
     z-index: 3;
+    background-color: #4269AF;
 }
 
-button > a{
-    text-decoration: none;
+a.nav-link{
+    text-align: center;
+    padding: 0px;
+}
+
+i.material-icons, i{
+    display: block;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+li.nav-item{
+    max-width: 100px;
+}
+
+a{
     color: white;
 }
 
-li > a {
-    margin: 0px 10px;
+#brandname{
+    height: 38px;
 }
 
-li > a > img{
-    width: 30px;
-    height: 30px;
-    margin: auto auto;
-    padding: 0px;
+.navbar-brand{
+    height: 100%;
+}
+
+.navbar-toggler-icon, .navbar-toggler{
+    border-color: white;
+}
+
+@media (max-width: 575.98px) {
+    .form-inline{
+        max-width: 150px;
+    }
 }
 

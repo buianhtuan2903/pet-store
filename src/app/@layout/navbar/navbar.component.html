@@ -1,35 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-      <a class="navbar-brand" href="">Dog-store</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand py-0" href="">
+        <img id="brandname" src="assets/img/brand.jpg" alt="galaxyconcept">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" >
+            <i class="fas fa-bars" style="font-size: 30px; color: white"></i>
+        </span>
       </button>
     
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit">Button</button>
+            </div>
+          </div>
       </form>
     
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
+      <div class="collapse navbar-collapse " id="navbarContent">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <img src="/assets/img/dogicon.png" alt="#"><br>Dog
+            <a class="nav-link" href="https://www.facebook.com/GalaxyConcept.1010/" target="_blank">
+              <i class="fab fa-facebook"></i><span>Facebook</span> 
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">
-                <img src="/assets/img/caticon.png" alt="#"><br>Cat
-              </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="/assets/img/mouseicon.png" alt="#"><br>Mouse
-                </a>
-              </li>
+            <a class="nav-link" href="https://www.messenger.com/t/GalaxyConcept.1010" target="_blank">
+              <i class="fab fa-facebook-messenger"></i><span>Messenger</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/galaxy.concept/" target="_blank">
+              <i class="fab fa-instagram"></i><span>Instagram</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">
+              <i class="fas fa-shopping-cart"></i><span>Giỏ hàng</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">
+              <i class="fas fa-user"></i><span>Đăng nhập</span>
+            </a>
+          </li>
         </ul>
-        <button type="button" class="btn btn-secondary"><a href="/admin">Admin</a></button> 
-        <button type="button" class="btn btn-secondary"><a href="/dashboard">Dashboard</a></button> 
       </div>
   </div>
 </nav>

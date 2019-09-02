@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
+    background-color: #E9EBEE;
 }
 
 .contain{
     position: relative;
     z-index: 0;
-    top: 56px;
+    top: 59px;
+    margin-bottom: 60px;
 }

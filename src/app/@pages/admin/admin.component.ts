@@ -3,6 +3,12 @@ import { DatabaseService } from 'src/app/@services/database.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DogData } from 'src/app/@services/dogdata';
+import { AuthService } from 'src/app/@services/auth.service';
+import { StorageService } from 'src/app/@services/storage.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { finalize } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -11,38 +17,36 @@ import { DogData } from 'src/app/@services/dogdata';
 })
 export class AdminComponent implements OnInit {
 
-  public dogs: Observable<any[]>;
+  public redirectUrl: string = 'manage';
 
-  constructor(private databaseservice: DatabaseService) { }
-  angForm = new FormGroup ({
-    name: new FormControl(''),
-    type: new FormControl(''),
-    price: new FormControl(''),
-  })
+  email: string;
+  password: string;
 
-  ngOnInit() {
-    this.dogs = this.getDog('/dogname');
-  }
-
-  addDog(name, type, price) {
-    const dataObj : DogData = {
-      name: name,
-      type: type,
-      price: price
-    };
-    this.databaseservice.addDog(dataObj);
+  constructor(private authService: AuthService, private router: Router) { 
   }
   
-  getDog(path) {
-    return this.databaseservice.getDog(path);
+  ngOnInit() {  }
+  
+  // Auth
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
   }
 
-  findvalueForm = new FormGroup({
-    findvalue: new FormControl('')
-  })
-  // findvalue ='nhut';
-  findDog(findvalue){
-    this.databaseservice.findDog(findvalue);
+  routing(routinglink){
+    this.router.navigate([this.redirectUrl]);
+    this.redirectUrl = null;
+  }
+  
+  login(data) {
+    this.authService.login(this.email, this.password);
+    this.email = this.password = '';
+    this.routing(this.redirectUrl);
+  }
+  
+
+  logout() {
+    this.authService.logout();
   }
 
 }

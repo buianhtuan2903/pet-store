@@ -19,4 +19,19 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  lists1 =[
+    {name: 'Mau 1'},
+    {name: 'Mau 2'},
+    {name: 'Mau 3'},
+  ];
+
+  lists2 =[
+    {name: 'Mau 1'},
+    {name: 'Mau 2'},
+    {name: 'Mau 3'},
+    {name: 'Mau 4'},
+    {name: 'Mau 5'},
+    {name: 'Mau 6'},
+    {name: 'Mau 7'},
+  ];
 }

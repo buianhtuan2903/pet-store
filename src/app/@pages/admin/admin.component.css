@@ -3,15 +3,19 @@
 }
 
 .container{
-    margin: 20px auto;
+    height:calc(100vh - 74px);
+    padding: 20px 15px;
 }
 
 .card{
-    margin: 10px auto;
     padding: 20px;
 }
 
-input{
-    height: 32px;
-    margin: auto 10px;
+button {
+    width: 150px;
+    margin: 10px 20px;
+}
+
+.loginbox{
+    align-self: center;
 }

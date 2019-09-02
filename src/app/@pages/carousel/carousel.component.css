@@ -1,24 +1,39 @@
+#carousel1{
+    padding-top: 20px;
+}
+
 .card-img-top{
+    height: 300px;
     width: 100%;
-    height: auto;
     transition-delay: 100ms;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
+    padding-top: 10px;
 }
+
 .card{
-    border: none !important;
+    text-decoration: none;
+    color: black;
+    border: none;
 }
+
+.card-text{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card-img-top:hover{
     transform: translate(0px, -10px);
     -ms-transform: translate(0px, -10px); /* IE 9 */
     -webkit-transform: translate(0px, -10px);
     transition-delay: 100ms;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 
 .carousel-control-prev,
 .carousel-control-next{
-    width: 40px;
-    background-color: grey;
+    width: 30px;
+    background-color: rgb(141, 141, 141);
     bottom: 40%;
     top: 40%;
 }

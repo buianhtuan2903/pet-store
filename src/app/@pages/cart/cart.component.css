@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    height:calc(100vh - 74px);
+}
+
+.row {
+    padding: 20px 0px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card{
+    padding: 10px;
+}

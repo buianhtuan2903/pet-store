@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-3">
+          <div class="card">
+              <ul class="item-list">
+                  <li>
+                    <a class="item-link" href="/allproduct">DANH MỤC SẢN PHẨM</a>
+                  </li>
+                  <li>
+                    <a class="item-link" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                      Màu vẽ <span class="dropdown-toggle"></span>
+                    </a>
+  
+                    <div id="collapse1" class="panel-collapse collapse" *ngFor="let list1 of lists1">
+                      <div class="panel-body">{{list1.name}}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="item-link" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                      Bút - Mực<span class="dropdown-toggle"></span>
+                    </a>
+                    <div id="collapse2" class="panel-collapse collapse" *ngFor="let list2 of lists2">
+                      <div class="panel-body">{{list2.name}}</div>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+        </div>
+    <div class="col-sm-6">
+      <div class="card"></div>
+      <img src="assets/img/1.jpg" width="700" alt="#" >
+    </div>
+    <div class="col-sm-3">
+      <div class="card" id="info">
+        <h6>{{itemname}}</h6>
+        <p>Xuất xứ: Galaxy Concept </p>
+        <h4 style="color: red;">Giá: {{price}}</h4>
+        <p>Chi tiết sản phẩm: <br>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Quae ea rerum at id maxime tempora consequatur incidunt, 
+          reprehenderit voluptates veritatis exercitationem dolorum ipsa, 
+          enim atque dolores, harum delectus nostrum? Beatae?
+        </p> 
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Số lượng</span>
+          </div>
+          <input type="number" [(ngModel)]="quantity" class="form-control" placeholder="Số lượng ..." aria-label="Email" min="0" aria-describedby="basic-addon1">
+
+        </div>
+        <button class="btn btn-danger" (click)="addtocart(quantity)">Thêm vào giỏ</button>
+      </div>
+    </div>
+
+  </div>
+</div>

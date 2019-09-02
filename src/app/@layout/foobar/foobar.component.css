@@ -1,11 +1,38 @@
 *{
     box-sizing: border-box;
+    line-height: 2;
 }
 
-footer{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.fluid-container{
+    position: sticky;
+    /* height: 100%; */
+}
+
+.row{
+    margin: 0px;
+}
+
+.col-sm-4{
+    padding: 10px 20px;
+}
+
+#information{
+    background-color: white; /* #4269AF; */
+    color: black;
+}
+
+#footer{
+    padding-top: 10px;
+    background-color: #ECECEC;
+    height: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #4269AF;
+}
+
+iframe{
+    border: 1px solid lightgray;
 }
