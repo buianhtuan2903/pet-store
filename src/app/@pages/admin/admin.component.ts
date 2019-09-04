@@ -41,7 +41,7 @@ export class AdminComponent implements OnInit {
   login(data) {
     this.authService.login(this.email, this.password);
     this.email = this.password = '';
-    this.routing(this.redirectUrl);
+    // this.routing(this.redirectUrl);
   }
   
 

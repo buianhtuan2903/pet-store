@@ -32,21 +32,21 @@ export class ManageComponent implements OnInit {
   })
 
   ngOnInit() {
-    this.dogs = this.getDog('/dogname');
+    this.databaseservice.getProduct();
   }
 
   // Database
-  addDog(name, type, price) {
+  addProduct(name, type, price) {
     const dataObj : DogData = {
       name: name,
       type: type,
       price: price
     };
-    this.databaseservice.addDog(dataObj);
+    this.databaseservice.addProduct(dataObj);
   }
   
-  getDog(path) {
-    return this.databaseservice.getDog(path);
+  getProduct(path) {
+    return this.databaseservice.getProduct();
   }
 
   findvalueForm = new FormGroup({

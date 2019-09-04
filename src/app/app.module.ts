@@ -27,6 +27,7 @@ import { ProductComponent } from './@pages/product/product.component';
 import { CartComponent } from './@pages/cart/cart.component';
 import { AuthGuard } from './@services/auth.guard';
 import { AllproductComponent } from './@pages/allproduct/allproduct.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AllproductComponent } from './@pages/allproduct/allproduct.component';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     AngularFireAuthModule,
-    AngularFireStorageModule, 
+    AngularFireStorageModule,
+    AngularFirestoreModule 
   ],
   providers: [
     DatabaseService,

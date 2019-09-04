@@ -8,7 +8,7 @@
         <input type="text" placeholder="Product type ..." name="type" formControlName="type" #type>
         <input type="number" placeholder="Product price ..." name="price" formControlName="price" #price>
 
-        <button (click)="addDog(name.value, type.value, price.value)" type="submit">Add</button>
+        <button (click)="addProduct(name.value, type.value, price.value)" type="submit">Add</button>
       </form>
   </div>
 
@@ -29,7 +29,7 @@
       </table>
     </div>
   </div>
-
+  <button (click)=getProduct()>Click me</button>
 
   <form [formGroup]="findvalueForm" novalidate>
     <input type="text" name="findvalue" formControlName="findvalue" #findvalue>
