@@ -1,5 +1,5 @@
 
-export class Users{
+export class Products{
     id: string;
     name: string;
     type: string;

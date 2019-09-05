@@ -17,14 +17,18 @@
     <div class="table-responsive">      
       <table class="table table-hover">
       <tr class="thead-dark">
+        <th>ID</th>
         <th>Name</th>
         <th>Type</th>
         <th>Price</th>
+        <th>ImageURL</th>
       </tr>
       <tr *ngFor="let product of products | async">
+        <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.type }}</td>
         <td>{{ product.price }}</td>
+        <td>{{ product.image }}</td>
       </tr>
       </table>
     </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/@services/database.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { DogData } from 'src/app/@services/dogdata';
+import { Products } from 'src/app/@services/productdata';
 import { AuthService } from 'src/app/@services/auth.service';
 import { StorageService } from 'src/app/@services/storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';

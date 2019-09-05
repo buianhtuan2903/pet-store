@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/@services/database.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Users } from 'src/app/@services/userdata';
+import { Products } from 'src/app/@services/productdata';
 import { AuthService } from 'src/app/@services/auth.service';
 import { StorageService } from 'src/app/@services/storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -11,14 +11,6 @@ import { finalize } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
-
-interface Products {
-  id: number;
-  name: string;
-  type: string;
-  price: number;
-  imgURL: string;
-}
 
 @Component({
   selector: 'app-manage',
