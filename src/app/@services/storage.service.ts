@@ -16,8 +16,7 @@ export class StorageService {
   // uploads: AngularFireStorage<Upload[]>;
 
   pushUpload(upload) {
-    let storageRef = firebase.storage().ref();
-    let uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
+    let uploadTask = firebase.storage().ref().child('${this.basePath}/${upload.file.name}').put(upload.file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>  {
@@ -40,6 +39,6 @@ export class StorageService {
   }
 
   private saveFileData(upload) {
-  this.db.list(`${this.basePath}/`).push(upload);
+  this.db.list(`${this.basePath}`).push(upload);
   }
 }

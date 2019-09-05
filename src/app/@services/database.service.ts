@@ -10,36 +10,25 @@ import { database } from 'firebase';
 
 export class DatabaseService {
   
-  private basePath = '/dogname';
-  
-  constructor(private db: AngularFireDatabase, private db2: AngularFirestore) { } 
-
-  // addDog(data) {
-  // const obj = this.db.database.ref(this.basePath);
-  // obj.child("dogdata").set(data);
-  // obj.push(data);
-  // alert('Success');
-  // }
+  constructor(private database: AngularFirestore) { } 
   
   addProduct(data){
-    
-    this.db2.collection("products").add(data)
+    this.database.collection("products").add(data)
   .then(function(docRef) {
       console.log("Document written with ID: ", docRef.id);
   })
   .catch(function(error) {
       console.error("Error adding document: ", error);
   });
-  
   }
 
   getDog(path): Observable<any[]> {
-    return this.db.list(path).valueChanges();
+    return this.database.collection("products").valueChanges();
   }
 
   getProduct(){
     const documents = [];
-    this.db2.collection("products").ref.get().then(function(querySnapshot) {
+    this.database.collection("products").ref.get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
@@ -50,15 +39,14 @@ export class DatabaseService {
   }
   
 
-  findDog(data2){
-    this.db.database.ref(this.basePath).orderByChild('name').equalTo(data2).on("value", function(snapshot) {
+ /* findProduct(data2){
+    this.database.collection("products").ref.get().orderByChild('name').equalTo(data2).on("value", function(snapshot) {
       console.log(snapshot.val());
       snapshot.forEach(function(data) {
-      // alert(data.val().power);
       var cac1 = data.val();
       alert(cac1.price);
       });
     });
-  }
+  } */
 
 }

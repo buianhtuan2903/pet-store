@@ -2,12 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/@services/database.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { DogData } from 'src/app/@services/dogdata';
+import { Users } from 'src/app/@services/userdata';
 import { AuthService } from 'src/app/@services/auth.service';
 import { StorageService } from 'src/app/@services/storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { finalize } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+
+interface Products {
+  id: number;
+  name: string;
+  type: string;
+  price: number;
+  imgURL: string;
+}
 
 @Component({
   selector: 'app-manage',
@@ -23,7 +34,11 @@ export class ManageComponent implements OnInit {
 
   public redirectUrl: string = 'admin';
 
-  constructor(private databaseservice: DatabaseService, private storage: AngularFireStorage, private authService: AuthService, private router: Router) { }
+  allproduct: AngularFirestoreCollection<Products>;
+  products: Observable<Products[]>;
+
+  constructor(private databaseservice: DatabaseService, private database: AngularFirestore, 
+    private storage: AngularFireStorage, private storageservice: StorageService, private authService: AuthService, private router: Router) { }
 
   angForm = new FormGroup ({
     name: new FormControl(''),
@@ -32,38 +47,42 @@ export class ManageComponent implements OnInit {
   })
 
   ngOnInit() {
-    this.databaseservice.getProduct();
+    this.allproduct = this.database.collection('products');
+    this.products = this.allproduct.valueChanges();
   }
 
   // Database
-  addProduct(name, type, price) {
-    const dataObj : DogData = {
-      name: name,
-      type: type,
-      price: price
-    };
+  addProduct(dataObj) {
+    // const dataObj : Users = {
+    //   id : null,
+    //   name: name,
+    //   type: type,
+    //   price: price,
+    //   imgURL: null
+    // };
     this.databaseservice.addProduct(dataObj);
+    this.angForm.reset();
   }
   
-  getProduct(path) {
+  getProduct() {
     return this.databaseservice.getProduct();
   }
 
   findvalueForm = new FormGroup({
     findvalue: new FormControl('')
   })
-  // findvalue ='nhut';
-  findDog(findvalue){
-    this.databaseservice.findDog(findvalue);
-  }
+
+  // findProduct(findvalue){
+  //   this.databaseservice.findProduct(findvalue);
+  // }
 
   // Storage
-
-
   uploadFile(event) {
     
     const file = event.target.files[0];
-    const filePath = 'image';
+    // const name = event.target.files[0].name;
+    const filePath = 'product/sampleimage';
+    // this.storage2.pushUpload(file);
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
@@ -74,16 +93,19 @@ export class ManageComponent implements OnInit {
         finalize(() => this.downloadURL = fileRef.getDownloadURL())
       )
     .subscribe()
+    console.log(this.downloadURL);
+    const test = this.downloadURL;
+    // this.document.querySelector('img').src = this.downloadURL;
   }
 
-  routing(routinglink){
-    this.router.navigate([this.redirectUrl]);
-    this.redirectUrl = null;
-  }
+  // routing(routinglink){
+  //   this.router.navigate([this.redirectUrl]);
+  //   this.redirectUrl = null;
+  // }
 
   logout() {
     this.authService.logout();
-    this.routing(this.redirectUrl);
+    // this.routing(this.redirectUrl);
   }
 
 }

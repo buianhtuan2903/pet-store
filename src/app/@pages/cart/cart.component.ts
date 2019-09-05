@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private database: AngularFirestore) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class CartComponent implements OnInit {
     {name: 'BỘ tạ', price: 10000, quantity: 2},
     {name: 'BỘ tạ 2', price: 20000, quantity: 10},
   ];
+  
   money1 : number ;
   money2 : number = 50000;
   times = [
@@ -36,5 +38,15 @@ export class CartComponent implements OnInit {
     {option: '20:00-21:00'},
     {option: '21:00-22:00'},
   ];
+
+  order(data){
+    this.database.collection("orders").add(data)
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+  }
 }
 

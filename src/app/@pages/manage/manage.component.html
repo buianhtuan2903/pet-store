@@ -8,7 +8,7 @@
         <input type="text" placeholder="Product type ..." name="type" formControlName="type" #type>
         <input type="number" placeholder="Product price ..." name="price" formControlName="price" #price>
 
-        <button (click)="addProduct(name.value, type.value, price.value)" type="submit">Add</button>
+        <button (click)="addProduct(angForm.value)" type="submit">Add</button>
       </form>
   </div>
 
@@ -21,20 +21,20 @@
         <th>Type</th>
         <th>Price</th>
       </tr>
-      <tr *ngFor="let dog of dogs | async">
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.type }}</td>
-        <td>{{ dog.price }}</td>
+      <tr *ngFor="let product of products | async">
+        <td>{{ product.name }}</td>
+        <td>{{ product.type }}</td>
+        <td>{{ product.price }}</td>
       </tr>
       </table>
     </div>
   </div>
-  <button (click)=getProduct()>Click me</button>
+  <!-- <button (click)=getProduct()>Click me</button> -->
 
-  <form [formGroup]="findvalueForm" novalidate>
+  <!-- <form [formGroup]="findvalueForm" novalidate>
     <input type="text" name="findvalue" formControlName="findvalue" #findvalue>
-    <button (click)="findDog(findvalue.value)" type="submit">Find</button>
-  </form>
+    <button (click)="findProduct(findvalue.value)" type="submit">Find</button>
+  </form> -->
 
   <div class="card">
     <h5 class="card-title">Image</h5>
@@ -47,4 +47,5 @@
     <!-- <div>{{ uploadPercent | async }}</!-->
 
     <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+    <img src="{{test}}" height="125" width="50"/>
 </div>
