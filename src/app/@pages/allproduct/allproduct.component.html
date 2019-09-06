@@ -28,12 +28,12 @@
       </div>
       <div class="col-sm-9">
           <div class="row pt-0">
-            <div class="col-sm-4 mb-4" *ngFor="let list2 of lists2">
+            <div class="col-sm-4 mb-4" *ngFor="let product of products | async ">
               <a class="card" href="/product">              
                 <img class="card-img-top" src="assets/img/2.jpg" alt="#">
                 <div class="card-footer">
-                  <p class="card-text">{{list2.name}}</p>
-                  <h6 class="card-text">25.000 VND</h6>
+                  <p class="card-text">{{product.name}}</p>
+                  <h6 class="card-text">{{product.price}}VND</h6>
                 </div>
               </a>
             </div>
