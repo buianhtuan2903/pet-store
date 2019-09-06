@@ -4,10 +4,11 @@
     <h4 class="card-title">Add product</h4>
     
       <form [formGroup]="angForm" novalidate>
-        <input type="text" placeholder="Product name ..." name="name" formControlName="name" #name>
-        <input type="text" placeholder="Product type ..." name="type" formControlName="type" #type>
-        <input type="number" placeholder="Product price ..." name="price" formControlName="price" #price>
-
+        <input type="number" placeholder="Product id" name="id" formControlName="id" #id>
+        <input type="text" placeholder="Product name" name="name" formControlName="name" #name>
+        <input type="text" placeholder="Product type" name="type" formControlName="type" #type>
+        <input type="text" placeholder="Image URL" name="imgURL" formControlName="imgURL" #imgURL>
+        <input type="number" placeholder="Product price" name="price" formControlName="price" #price>
         <button (click)="addProduct(angForm.value)" type="submit">Add</button>
       </form>
   </div>
